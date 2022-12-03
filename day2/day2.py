@@ -19,15 +19,20 @@ for s in strategy:
     # # Part 1
     result = s.strip().split(' ')
     check = ''.join(result)
-    # print(check)
-    # if check in win_list:
-    #     points += 6
+    if check in win_list:
+        points += 6
         
-    # elif check in tie_list:
-    #     points += 3
-    # else:
-    #     points += 0
-    # points += score_dict[result[1]]
+    elif check in tie_list:
+        points += 3
+    else:
+        points += 0
+    points += score_dict[result[1]]
+print(points)
+
+points = 0
+for s in strategy:
+    result = s.strip().split(' ')
+    check = ''.join(result)
     # # Part 2
     if result[1] == 'X':
         for r in lose_list:
