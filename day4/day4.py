@@ -6,8 +6,10 @@ with open('day4-input.txt', 'r') as f:
     for a in assignments:
         coverage = []
         for assignment in a.split(','):
-            coverage.append([i for i in range([int(i) for i in assignment.split('-')][0], \
-                [int(i) for i in assignment.split('-')][1]+1 )])
+            coverage.append([i for i in range(
+                [int(i) for i in assignment.split('-')][0], \
+                [int(i) for i in assignment.split('-')][1]+1 )]
+            )
         # Part 1
         if set(coverage[0]).issubset(coverage[1]):
             encompass += 1
@@ -18,5 +20,5 @@ with open('day4-input.txt', 'r') as f:
         if set(coverage[0]).intersection(coverage[1]):
             overlap += 1
 
-print(encompass)
-print(overlap)
+print(f'Part 1: {encompass}')
+print(f'Part 2: {overlap}')
