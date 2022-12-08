@@ -42,5 +42,5 @@ for move in moves.split('\n'):
     # Part 2
     crate_dict2 = move_multi_crate(crate_dict2, src, dst, num_crates)
 
-print(''.join([i[0] for i in crate_dict1.values()]).replace('[','').replace(']',''))
-print(''.join([i[0] for i in crate_dict2.values()]).replace('[','').replace(']',''))
+for cd in [crate_dict1, crate_dict2]:
+    print(''.join([i[0] for i in cd.values()]).replace('[','').replace(']',''))
